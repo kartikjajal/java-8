@@ -1,8 +1,7 @@
-package org.java.functional.programming.example1;
+package org.java.functional.programming.common;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 @Getter
 @Builder

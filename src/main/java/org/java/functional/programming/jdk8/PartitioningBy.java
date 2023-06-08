@@ -1,4 +1,4 @@
-package org.java.functional.programming.example6;
+package org.java.functional.programming.jdk8;
 
 import org.java.functional.programming.common.Employee;
 
@@ -10,6 +10,6 @@ import java.util.stream.Collectors;
 public class PartitioningBy {
     public Map<Boolean, List<Employee>> getPartitionedDataByHigherSalary(Collection<Employee> employees) {
         return employees.stream()
-                .collect(Collectors.partitioningBy(employee -> employee.getSalary() > 2000));
+                        .collect(Collectors.partitioningBy(employee -> employee.getSalary() > 2000));
     }
 }

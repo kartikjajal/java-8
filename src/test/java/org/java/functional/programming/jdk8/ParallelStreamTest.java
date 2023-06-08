@@ -1,5 +1,6 @@
-package org.java.functional.programming.example4;
+package org.java.functional.programming.jdk8;
 
+import org.java.functional.programming.jdk8.ParallelStream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,7 +12,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class ParallelStreamTest {
-    private ParallelStream subject = new ParallelStream();
+    private final ParallelStream subject = new ParallelStream();
 
     private static Stream<Arguments> getTestData() {
         return Stream.of(Arguments.of(IntStream.range(0, 10), 20L),

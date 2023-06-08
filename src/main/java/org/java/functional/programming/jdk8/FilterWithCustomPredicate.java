@@ -1,4 +1,4 @@
-package org.java.functional.programming.example5;
+package org.java.functional.programming.jdk8;
 
 import org.java.functional.programming.common.Department;
 import org.java.functional.programming.common.Employee;
@@ -15,18 +15,20 @@ public class FilterWithCustomPredicate {
     }
 
     private static Predicate<Employee> isDepartmentAWS() {
-        return employee -> employee.getDepartment().equals(Department.AWS);
+        return employee -> employee.getDepartment()
+                                   .equals(Department.AWS);
     }
 
     private static Predicate<Employee> isDepartmentOpenSourceCloud() {
-        return employee -> employee.getDepartment().equals(Department.OPEN_SOURCE_AND_CLOUD);
+        return employee -> employee.getDepartment()
+                                   .equals(Department.OPEN_SOURCE_AND_CLOUD);
     }
 
     public List<Employee> filterDataBySalaryAndDesignation(Collection<Employee> employees, int higherThanSalary) {
         return employees.parallelStream()
-                .filter((isHigherRangeSalary(higherThanSalary).and(isDepartmentAWS()))
-                        .or(isHigherRangeSalary(higherThanSalary).and(isDepartmentOpenSourceCloud())))
-                .collect(Collectors.toList());
+                        .filter((isHigherRangeSalary(higherThanSalary).and(isDepartmentAWS()))
+                                .or(isHigherRangeSalary(higherThanSalary).and(isDepartmentOpenSourceCloud())))
+                        .collect(Collectors.toList());
     }
 }
 

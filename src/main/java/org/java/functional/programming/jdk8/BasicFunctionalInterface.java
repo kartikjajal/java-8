@@ -1,8 +1,10 @@
-package org.java.functional.programming.example1;
+package org.java.functional.programming.jdk8;
+
+import org.java.functional.programming.common.BinaryIntOpInput;
 
 import java.util.function.Function;
 
-public class Functional1 {
+public class BasicFunctionalInterface {
     public BinaryIntOp add() {
         return (a, b) -> a + b;
     }
@@ -19,13 +21,13 @@ public class Functional1 {
         return (a, b) -> a / b;
     }
 
-    public int compute(Function<BinaryIntOpInput, Integer> function, BinaryIntOpInput input){
+    public int compute(Function<BinaryIntOpInput, Integer> function, BinaryIntOpInput input) {
         return function.apply(input);
     }
 
     @FunctionalInterface
     interface BinaryIntOp {
-        public int perform(int a, int b);
+        int perform(int a, int b);
     }
 }
 

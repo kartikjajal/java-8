@@ -1,8 +1,9 @@
-package org.java.functional.programming.example5;
+package org.java.functional.programming.jdk8;
 
 import org.assertj.core.api.Assertions;
 import org.java.functional.programming.common.Department;
 import org.java.functional.programming.common.Employee;
+import org.java.functional.programming.jdk8.FilterWithCustomPredicate;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -37,10 +38,10 @@ public class FilterWithCustomPredicateTest {
 
     private static Employee getEmployee(String name, Department department, int salary) {
         return Employee.builder()
-                .name(name)
-                .department(department)
-                .salary(salary)
-                .build();
+                       .name(name)
+                       .department(department)
+                       .salary(salary)
+                       .build();
     }
 
     @ParameterizedTest
@@ -48,8 +49,8 @@ public class FilterWithCustomPredicateTest {
     void test_filter(Collection<Employee> employees, int higherThanSalary, Collection<Employee> expected) {
         Collection<Employee> actual = subject.filterDataBySalaryAndDesignation(employees, higherThanSalary);
         Assertions.assertThat(actual)
-                .usingRecursiveComparison()
-                .isEqualTo(expected);
+                  .usingRecursiveComparison()
+                  .isEqualTo(expected);
     }
 
 }

@@ -1,4 +1,4 @@
-package org.java.functional.programming.example4;
+package org.java.functional.programming.jdk8;
 
 import java.util.stream.IntStream;
 
